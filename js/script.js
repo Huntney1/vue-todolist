@@ -6,29 +6,35 @@ createApp({
             newTask: '',
             todolist: [
                 {
-                    text:'Fare la spesa',
+                    text: 'Fare la spesa',
+                    done: false,
                 },
                 {
-                    text:'Portare a spasso il cane',
+                    text: 'Portare a spasso il cane',
+                    done: false,
                 },
                 {
-                    text:'Preparare la cena',
+                    text: 'Preparare la cena',
+                    done: false,
                 },
                 {
-                    text:'Riempire il frigorifero',
+                    text: 'Riempire il frigorifero',
+                    done: false,
                 },
                 {
-                    text:'Fare l\'esercizio di Boolean',
+                    text: 'Fare l\'esercizio di Boolean',
+                    done: false,
                 },
                 {
-                    text:'Lavare la macchina',
+                    text: 'Lavare la macchina',
+                    done: false,
                 },
                 {
-                    text:'Allenarsi',
+                    text: 'Allenarsi',
+                    done: false,
                 },
             ],
-        }         
-      ,  }
+        }
     },
     methods: {
         addTask() {
@@ -39,4 +45,6 @@ createApp({
             this.todolist.splice(index, 1);
         }
     },
+
+    done: false,
 }).mount('#app')
