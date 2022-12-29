@@ -22,10 +22,12 @@
 </head>
 
 <body>
+    <!-- Collegamento al file Vuejs (script.js) -->
     <div id="app">
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    <!-- Titolo -->
                     <div class="text-center">
                         <h2>Vue todolist</h2>
                     </div>
@@ -33,13 +35,32 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12">
+                    <!-- Lista -->
                     <div class="todolist-container">
                         <ul class="list-unstyled">
-                            <li class="list-item" v-for="item in todolist">
-                                {{ item }}
+                            <li class="list-item" v-for="(item, index) in todolist">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                     {{index + 1}} - {{ item }}   
+                                    </div>
+                                    <div></div>
+                                    <button class="btn btn-square btn-sm btn-danger"><i class="fas fa-trash" @click="deleteTask(index)"></i>
+                                    </button>
+                                </div>
+                                
                             </li>
                         </ul>
                     </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <!-- Inserimento nuovo elemento in lista -->
+                    <div class="d-flex w-100">
+                        <input class="form-control" role="button" placeholder="Inserisci nuova task" v-model="newTask"
+                            @keyup.enter="addTask">
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -48,7 +69,7 @@
     <!--
         
             <li v-for="(object, index) in todolist" :class="(object.done === true) ? 'sbarrato' : ''" @click="checkTask(index)">
-                {{index + 1}} - {{object.text}}>
+               
                 <button class =" btn btn -sm btn-danger " @click =" deleteTask(index) " > cancella </button>
             </li>
         
