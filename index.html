@@ -41,13 +41,14 @@
                             <li class="list-item" v-for="(item, index) in todolist">
                                 <div class="d-flex justify-content-between">
                                     <div>
-                                     {{index + 1}} - {{ item }}   
+                                        {{index + 1}} - {{ item }}
                                     </div>
-                                    <div></div>
-                                    <button class="btn btn-square btn-sm btn-danger"><i class="fas fa-trash" @click="deleteTask(index)"></i>
-                                    </button>
+                                    <div>
+                                        <button class="btn btn-square btn-sm btn-danger"><i class="fas fa-trash"
+                                                @click="deleteTask(index)"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                                
                             </li>
                         </ul>
                     </div>
