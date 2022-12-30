@@ -43,8 +43,15 @@ createApp({
         },
         deleteTask(index) {
             this.todolist.splice(index, 1);
-        }
+        },
+        checkTask(index) {
+            let task = this.todolist[index]
+            if (task.done == true) {
+                task.done = false;
+            }
+            else
+                task.done = true;
+        },
     },
 
-    done: false,
 }).mount('#app')

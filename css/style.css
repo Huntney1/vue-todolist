@@ -18,3 +18,18 @@
 .list-item{
     padding: 5px;
 }
+
+/* Linea di sbarramento */
+.stroked{
+    text-decoration: line-through;
+    color: lime;
+    text-shadow: 1.3px 1.5px 1px black;
+    border: 1px solid rgb(194, 194, 194);
+    background-color: rgb(246, 246, 246);
+    border-radius: 0.299em;
+    height: 32px;
+    width: 16rem;
+   align-items: center;
+   text-align: center;
+
+}

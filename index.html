@@ -40,12 +40,15 @@
                         <ul class="list-unstyled">
                             <li class="list-item" v-for="(item, index) in todolist">
                                 <div class="d-flex justify-content-between">
-                                    <div>
+                                    <div :class="item.done ? 'stroked' : ''">
                                         {{index + 1}} - {{ item.text }}
                                     </div>
                                     <div>
-                                        <button class="btn btn-sm btn-success btn-square"></button><i class="fas fa-thick"></i>
-                                        <button class="btn btn-square btn-sm btn-danger"><i class="fas fa-trash"
+                                        <!-- Check button -->
+                                        <button class="btn btn-sm btn-success btn-square m-1" @click="checkTask(index)"><i class="fas fa-check"></i>
+                                        </button>
+                                        <!-- Delete button -->
+                                        <button class="btn btn-square btn-sm btn-danger m-1"><i class="fas fa-trash"
                                                 @click="deleteTask(index)"></i>
                                         </button>
                                     </div>
