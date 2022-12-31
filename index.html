@@ -39,16 +39,22 @@
                     <div class="todolist-container">
                         <ul class="list-unstyled">
                             <li class="list-item" v-for="(item, index) in todolist">
-                                <div class="d-flex justify-content-between">
+                                <div class="d-flex justify-content-between align-items-center">
                                     <div :class="item.done ? 'stroked' : ''">
                                         {{index + 1}} - {{ item.text }}
                                     </div>
                                     <div>
                                         <!-- Check button -->
-                                        <button class="btn btn-sm btn-success btn-square m-1" @click="checkTask(index)"><i class="fas fa-check"></i>
+                                        <button v-if="!item.done" class="button button-success m-1"
+                                            @click="checkTask(index)"><i class="fas fa-check"></i>
                                         </button>
+                                        <!-- Times button -->
+                                        <button v-if="item.done" class="button button-danger m-1"
+                                            @click="checkTask(index)"><i class="fas fa-times"></i>
+                                        </button>
+
                                         <!-- Delete button -->
-                                        <button class="btn btn-square btn-sm btn-danger m-1"><i class="fas fa-trash"
+                                        <button class="button button-danger m-1"><i class="fas fa-trash"
                                                 @click="deleteTask(index)"></i>
                                         </button>
                                     </div>
@@ -58,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-3">
+            <div class="row my-3">
                 <div class="col-12">
                     <!-- Inserimento nuovo elemento in lista -->
                     <div class="d-flex w-100">

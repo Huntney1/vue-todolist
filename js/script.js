@@ -38,7 +38,11 @@ createApp({
     },
     methods: {
         addTask() {
-            this.todolist.push(this.newTask)
+            let object = {
+                text: this.newTask,
+                done: false
+            }
+            this.todolist.push(object)
             this.newTask = '';
         },
         deleteTask(index) {

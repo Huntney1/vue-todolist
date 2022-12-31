@@ -19,6 +19,24 @@
     padding: 5px;
 }
 
+/* Bottoni (Button) */
+
+/* Button size  */
+.button{
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+
+.button-success{
+    background-color: lime;
+    color: white;
+}
+.button-danger{
+background-color: red;
+color: white;
+}
+
 /* Linea di sbarramento */
 .stroked{
     text-decoration: line-through;
@@ -29,7 +47,7 @@
     border-radius: 0.299em;
     height: 32px;
     width: 16rem;
-   align-items: center;
-   text-align: center;
+    align-items: center;
+   /*text-align: center; */
 
 }
